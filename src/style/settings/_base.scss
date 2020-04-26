@@ -1,0 +1,76 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  outline: none;
+}
+
+// selection
+::selection {
+  background: #ffc5b7;
+  color: #000;
+}
+::-moz-selection {
+  background: #ffc5b7;
+  color: #000;
+}
+
+// scroll bars
+*::-webkit-scrollbar,
+*::-webkit-scrollbar-thumb {
+  background: transparent;
+  color: white;
+  width: 17px;
+  border-radius: 10px;
+  background-clip: padding-box;
+  border: 5px solid transparent;
+}
+*::-webkit-scrollbar-thumb {
+  box-shadow: inset 0 0 0 10px;
+}
+
+// hide number input arrows
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Baloo Da 2", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -webkit-osx-font-smoothing: greyscale;
+  color: #000;
+  overflow-x: hidden;
+}
+
+a {
+  // color: $black;
+  text-decoration: none;
+}
+
+i {
+  padding: 0 1rem;
+}
+
+ul {
+  list-style: none;
+}
+
+img {
+  width: 100%;
+}
+
+button,
+input:focus {
+  outline: none;
+}

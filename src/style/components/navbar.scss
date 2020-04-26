@@ -1,0 +1,27 @@
+.navbar {
+  position: absolute;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 150px;
+  max-width: 1765px;
+  margin: auto;
+  padding: 0 30px;
+  font-size: 1rem;
+  z-index: 99;
+  //   background-color: red;
+  img {
+    width: auto;
+    height: 74px;
+  }
+  .actions {
+    margin-top: 25px;
+    i {
+      color: #292929;
+      font-size: 1.5rem;
+      padding: 0 25px;
+    }
+  }
+}

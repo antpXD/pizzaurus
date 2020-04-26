@@ -1,0 +1,35 @@
+.curved-text {
+  font-size: 5px;
+  font-family: "Economica", sans-serif;
+  font-weight: 400;
+  z-index: 1;
+
+  position: relative;
+  svg {
+    overflow: hidden;
+  }
+  path {
+    display: none;
+  }
+  text {
+    position: absolute;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    fill: #a3a3a3;
+    font-size: 5px;
+    letter-spacing: 0.8em;
+    cursor: pointer;
+    transition: fill ease-in-out 0.3s;
+
+    &:hover {
+      fill: #000;
+      // font-weight: 700;
+      transition: fill ease-in-out 0.3s;
+    }
+    &::selection {
+      background: none;
+    }
+  }
+}

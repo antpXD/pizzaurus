@@ -1,0 +1,16 @@
+@import "settings/base";
+@import "settings/variables.scss";
+
+// //fontawesome
+@import "fontawesome/scss/fontawesome";
+@import "fontawesome/scss/solid";
+@import "fontawesome/scss/regular";
+
+// // components
+@import "components/navbar.scss";
+@import "components/layout.scss";
+@import "components/pizza.scss";
+@import "components/menu.scss";
+@import "components/leaves.scss";
+
+@import "animations/ingredients.scss";

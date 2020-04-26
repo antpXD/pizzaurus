@@ -1,0 +1,62 @@
+{
+  "orders": [
+    {
+      "id": 1,
+      "customer": {},
+      "done": false,
+      "pizza": [
+        {
+          "id": 1,
+          "size": "L",
+          "ingredients": [
+            {
+              "name": "pomidor",
+              "selected": false,
+              "price": "0.20"
+            },
+            {
+              "name": "pieczarka",
+              "selected": true,
+              "price": "0.30"
+            },
+            {
+              "name": "twojastarajebanananana",
+              "selected": false,
+              "price": "0.40"
+            }
+          ]
+        },
+        {
+          "id": 2,
+          "size": "M",
+          "ingredients": [
+            {
+              "name": "pomidor",
+              "selected": false,
+              "price": "0.20"
+            },
+            {
+              "name": "pieczarka",
+              "selected": true,
+              "price": "0.30"
+            },
+            {
+              "name": "twojastarajebanananana",
+              "selected": false,
+              "price": "0.40"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "customers": [
+    {
+      "id": 1,
+      "firstName": "Karol",
+      "lastName": "Wojtyła",
+      "adress": "Siema 21/37",
+      "email": "eloelo@320.com"
+    }
+  ]
+}
