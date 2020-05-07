@@ -7,7 +7,7 @@ const Size = () => {
   const action = useDispatch();
 
   return (
-    <div className="size">
+    <div className="size-section">
       <h2>WYBIERZ ROZMIAR</h2>
       <div className="circles">
         <div

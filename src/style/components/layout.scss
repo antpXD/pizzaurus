@@ -7,6 +7,7 @@
   align-items: center;
   padding-top: 180px;
   overflow: hidden;
+
   h1 {
     font-family: "Poppins", sans-serif;
     font-size: 36px;
@@ -17,6 +18,7 @@
     width: 80%;
     display: flex;
     justify-content: space-between;
+    padding-top: 50px;
 
     h2 {
       font-family: "Economica", sans-serif;
@@ -24,11 +26,11 @@
       font-weight: bold;
       letter-spacing: 0.14em;
     }
-    .size {
+
+    .size-section {
       display: flex;
       flex-direction: column;
       align-items: center;
-      padding-top: 50px;
       z-index: 3;
       .circles {
         display: flex;
@@ -50,42 +52,6 @@
       .selected {
         border: 1px solid #1a1a1a;
         color: #1a1a1a;
-      }
-    }
-    .order {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      margin-top: 50px;
-      z-index: 3;
-      .summary {
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        margin-top: 30px;
-        h3 {
-          font-family: "Poppins", sans-serif;
-          color: #5c5c5c;
-          font-size: 24px;
-          font-weight: bold;
-        }
-
-        .pizza-plate-small {
-          width: 60px;
-          height: 60px;
-          // margin-top: 50px;
-          margin-left: 40px;
-        }
-      }
-      .add-to-order {
-        padding-top: 15px;
-        color: #b6b6b6;
-        transition: color 0.2s ease-in-out;
-        cursor: pointer;
-        &:hover {
-          color: black;
-          transition: color 0.2s ease-in-out;
-        }
       }
     }
   }

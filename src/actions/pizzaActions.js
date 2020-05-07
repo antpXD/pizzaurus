@@ -1,4 +1,11 @@
-import { SELECT_SIZE, SET_ORDER } from "./types";
+import { SELECT_INGREDIENT, SELECT_SIZE, RESET_PIZZA } from "./types";
+
+export const selectIngredient = (name) => {
+  return {
+    type: SELECT_INGREDIENT,
+    name: name,
+  };
+};
 
 export const selectSize = (size, price) => {
   return {
@@ -7,8 +14,9 @@ export const selectSize = (size, price) => {
     price: price,
   };
 };
-export const setOrder = () => {
+
+export const resetPizza = () => {
   return {
-    type: SET_ORDER,
+    type: RESET_PIZZA,
   };
 };

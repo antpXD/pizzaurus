@@ -1,8 +1,8 @@
 import { combineReducers } from "redux";
-import ingredientsReducer from "./ingredientsReducer";
 import pizzaReducer from "./pizzaReducer";
+import orderReducer from "./orderReducer";
 
 export default combineReducers({
-  ingredients: ingredientsReducer,
   pizza: pizzaReducer,
+  order: orderReducer,
 });

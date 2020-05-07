@@ -1,9 +1,9 @@
 import React from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { selectIngredient } from "../actions/ingriedientsActions";
+import { selectIngredient } from "../actions/pizzaActions";
 
 const Menu = () => {
-  const ingredients = useSelector((state) => state.ingredients);
+  const ingredients = useSelector((state) => state.pizza.ingredients);
   const action = useDispatch();
 
   return (
@@ -22,94 +22,23 @@ const Menu = () => {
           strokeWidth="1"
           id="curve"
         />
-        <text x="170" onClick={() => action(selectIngredient("pieczarki"))}>
-          <textPath
-            xlinkHref="#curve"
-            style={{
-              fill: ingredients[0].selected && "black",
-              fontSize: ingredients[0].selected ? "28px" : "26px",
-            }}
+        {ingredients.map((ingredient, index) => (
+          <text
+            x={ingredient.pathPosition}
+            key={index}
+            onClick={() => action(selectIngredient(ingredient.name))}
           >
-            PIECZARKI
-          </textPath>
-        </text>
-        <text x="340" onClick={() => action(selectIngredient("oliwki"))}>
-          <textPath
-            xlinkHref="#curve"
-            style={{
-              fill: ingredients[1].selected && "black",
-              fontSize: ingredients[1].selected ? "28px" : "26px",
-            }}
-          >
-            OLIWKI
-          </textPath>
-        </text>
-        <text x="480" onClick={() => action(selectIngredient("pepperoni"))}>
-          <textPath
-            xlinkHref="#curve"
-            style={{
-              fill: ingredients[2].selected && "black",
-              fontSize: ingredients[2].selected ? "28px" : "26px",
-            }}
-          >
-            PEPPERONI
-          </textPath>
-        </text>
-        <text x="660" onClick={() => action(selectIngredient("pomidory"))}>
-          <textPath
-            xlinkHref="#curve"
-            style={{
-              fill: ingredients[3].selected && "black",
-              fontSize: ingredients[3].selected ? "28px" : "26px",
-            }}
-          >
-            POMIDORY
-          </textPath>
-        </text>
-        <text x="840" onClick={() => action(selectIngredient("chilli"))}>
-          <textPath
-            xlinkHref="#curve"
-            style={{
-              fill: ingredients[4].selected && "black",
-              fontSize: ingredients[4].selected ? "28px" : "26px",
-            }}
-          >
-            CHILLI
-          </textPath>
-        </text>
-        <text x="950" onClick={() => action(selectIngredient("bekon"))}>
-          <textPath
-            xlinkHref="#curve"
-            style={{
-              fill: ingredients[5].selected && "black",
-              fontSize: ingredients[5].selected ? "28px" : "26px",
-            }}
-          >
-            BEKON
-          </textPath>
-        </text>
-        <text x="1070" onClick={() => action(selectIngredient("cebula"))}>
-          <textPath
-            xlinkHref="#curve"
-            style={{
-              fill: ingredients[6].selected && "black",
-              fontSize: ingredients[6].selected ? "28px" : "26px",
-            }}
-          >
-            CEBULA
-          </textPath>
-        </text>
-        <text x="1210" onClick={() => action(selectIngredient("papryka"))}>
-          <textPath
-            xlinkHref="#curve"
-            style={{
-              fill: ingredients[7].selected && "black",
-              fontSize: ingredients[7].selected ? "28px" : "26px",
-            }}
-          >
-            PAPRYKA
-          </textPath>
-        </text>
+            <textPath
+              xlinkHref="#curve"
+              style={{
+                fill: ingredient.selected && "black",
+                fontSize: ingredient.selected ? "28px" : "26px",
+              }}
+            >
+              {ingredient.name}
+            </textPath>
+          </text>
+        ))}
       </svg>
     </div>
   );
