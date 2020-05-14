@@ -1,22 +1,15 @@
 import React from "react";
 import PropTypes from "prop-types";
+
 import { useDispatch } from "react-redux";
 import { removePizza } from "../../actions/orderActions";
+import { getOrderedPizzaPrice } from "../../helpers/functions";
 
 import PizzaImg from "../../images/pizza/pizza.png";
 import PizzaPlateImg from "../../images/pizza/pizza-plate.png";
 
 const OrderItem = ({ orderedPizza }) => {
   const action = useDispatch();
-
-  const getOrderedPizzaPrice = () => {
-    let ingredientsPrice = 0;
-    orderedPizza.ingredients.map(
-      (ingredient) =>
-        ingredient.selected === true && (ingredientsPrice += ingredient.price)
-    );
-    return ingredientsPrice + orderedPizza.price;
-  };
 
   const scalePizzaSize = () => {
     if (orderedPizza.size === "S") {
@@ -32,7 +25,10 @@ const OrderItem = ({ orderedPizza }) => {
     <div className="mini-pizza-container">
       <div
         className="mini-pizza-wrapper"
-        onClick={() => action(removePizza(orderedPizza))}
+        onClick={() => {
+          window.scrollTo(0, 0);
+          action(removePizza(orderedPizza));
+        }}
       >
         <div className="ingredients-container">
           {orderedPizza.ingredients.map(
@@ -53,8 +49,27 @@ const OrderItem = ({ orderedPizza }) => {
           src={PizzaImg}
         />
         <img className="plate" alt="Refresh your page..." src={PizzaPlateImg} />
+        <div className="overlay">
+          <div className="delete">X</div>
+        </div>
       </div>
-      <p className="price">${getOrderedPizzaPrice()}</p>
+      <div className="tooltip">
+        <div style={{ display: "flex", justifyContent: "space-between" }}>
+          <h4>Size: {orderedPizza.size}</h4>
+          <h4>Price: ${getOrderedPizzaPrice(orderedPizza)}</h4>
+        </div>
+        <h4 style={{ paddingTop: "5px" }}>Składniki: </h4>
+        <p className="ingredients-list">
+          {orderedPizza.ingredients.map(
+            (ingredient, index) =>
+              ingredient.selected && (
+                <span key={index}>{ingredient.name} | </span>
+              )
+          )}
+          {orderedPizza.ingredients.length === 0 && <span>Brak</span>}
+        </p>
+      </div>
+      <p className="price">${getOrderedPizzaPrice(orderedPizza)}</p>
     </div>
   );
 };

@@ -1,62 +1,124 @@
 {
   "orders": [
     {
-      "id": 1,
-      "customer": {},
-      "done": false,
+      "customer": {
+        "city": "Białystok",
+        "street": "Białostoczek",
+        "house": "22 / 23",
+        "phone": "500 000 000",
+        "email": "siema@siiema.gmail.com"
+      },
       "pizza": [
         {
-          "id": 1,
           "size": "L",
+          "price": 15,
+          "ready": "true",
+          "quantity": 1,
           "ingredients": [
             {
-              "name": "pomidor",
+              "name": "pieczarki",
               "selected": false,
-              "price": "0.20"
+              "price": "0.5"
             },
             {
-              "name": "pieczarka",
-              "selected": true,
-              "price": "0.30"
+              "name": "oliwki",
+              "selected": false,
+              "price": "0.5"
             },
             {
-              "name": "twojastarajebanananana",
+              "name": "pepperoni",
               "selected": false,
-              "price": "0.40"
-            }
-          ]
-        },
-        {
-          "id": 2,
-          "size": "M",
-          "ingredients": [
-            {
-              "name": "pomidor",
-              "selected": false,
-              "price": "0.20"
+              "price": "0.5"
             },
             {
-              "name": "pieczarka",
-              "selected": true,
-              "price": "0.30"
+              "name": "pomidory",
+              "selected": false,
+              "price": "0.5"
             },
             {
-              "name": "twojastarajebanananana",
+              "name": "chilli",
               "selected": false,
-              "price": "0.40"
+              "price": "0.5"
+            },
+            {
+              "name": "bekon",
+              "selected": false,
+              "price": "0.5"
+            },
+            {
+              "name": "cebula",
+              "selected": false,
+              "price": "0.5"
+            },
+            {
+              "name": "papryka",
+              "selected": false,
+              "price": "0.5"
             }
           ]
         }
-      ]
-    }
-  ],
-  "customers": [
+      ],
+      "id": 1
+    },
     {
-      "id": 1,
-      "firstName": "Karol",
-      "lastName": "Wojtyła",
-      "adress": "Siema 21/37",
-      "email": "eloelo@320.com"
+      "customer": {
+        "city": "Białystok",
+        "street": "Białostoczek",
+        "house": "22 / 23",
+        "phone": "500 000 000",
+        "email": "siema@siiema.gmail.com"
+      },
+      "pizza": [
+        {
+          "size": "L",
+          "price": 15,
+          "ready": "true",
+          "quantity": 1,
+          "ingredients": [
+            {
+              "name": "pieczarki",
+              "selected": false,
+              "price": "0.5"
+            },
+            {
+              "name": "oliwki",
+              "selected": false,
+              "price": "0.5"
+            },
+            {
+              "name": "pepperoni",
+              "selected": false,
+              "price": "0.5"
+            },
+            {
+              "name": "pomidory",
+              "selected": false,
+              "price": "0.5"
+            },
+            {
+              "name": "chilli",
+              "selected": false,
+              "price": "0.5"
+            },
+            {
+              "name": "bekon",
+              "selected": false,
+              "price": "0.5"
+            },
+            {
+              "name": "cebula",
+              "selected": false,
+              "price": "0.5"
+            },
+            {
+              "name": "papryka",
+              "selected": false,
+              "price": "0.5"
+            }
+          ]
+        }
+      ],
+      "id": 2
     }
   ]
 }

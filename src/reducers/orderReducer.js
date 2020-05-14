@@ -1,4 +1,9 @@
-import { ADD_PIZZA, SET_LOADING, REMOVE_PIZZA } from "../actions/types";
+import {
+  ADD_PIZZA,
+  SET_LOADING,
+  REMOVE_PIZZA,
+  ADD_CUSTOMER,
+} from "../actions/types";
 
 const initialState = {
   customer: null,
@@ -17,6 +22,12 @@ const pizzaReducer = (state = initialState, action) => {
       return {
         ...state,
         orderedPizzas: [...state.orderedPizzas, action.payload],
+        loading: false,
+      };
+    case ADD_CUSTOMER:
+      return {
+        ...state,
+        customer: action.payload,
         loading: false,
       };
     case REMOVE_PIZZA:

@@ -1,20 +1,21 @@
 .drop-enter {
   opacity: 0;
   z-index: 99;
-  transform: scale(3);
+  transform: scale(4);
+  transition: opacity 500ms, transform 500ms;
 }
 .drop-enter-active {
-  opacity: 1;
+  opacity: 0;
   z-index: 99;
-  transform: scale(3);
-  transition: opacity 400ms, transform 400ms;
+  transform: scale(4);
+  transition: opacity 300ms, transform 500ms;
 }
 
 .drop-enter-done {
   opacity: 1;
   z-index: 99;
   transform: scale(1);
-  transition: opacity 400ms, transform 400ms;
+  transition: opacity 300ms, transform 500ms;
 }
 
 .drop-exit {
@@ -23,8 +24,8 @@
   transform: scale(1);
 }
 .drop-exit-active {
-  opacity: 0;
+  opacity: 1;
   z-index: 99;
-  transform: scale(3);
+  transform: translate3d(0, 600px, 0);
   transition: opacity 800ms, transform 900ms;
 }

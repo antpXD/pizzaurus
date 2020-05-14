@@ -1,4 +1,4 @@
-import { SET_LOADING, ADD_PIZZA, REMOVE_PIZZA } from "./types";
+import { SET_LOADING, ADD_PIZZA, REMOVE_PIZZA, ADD_CUSTOMER } from "./types";
 
 export const setLoading = () => {
   return {
@@ -13,6 +13,12 @@ export const addPizza = (pizza) => {
   return {
     type: ADD_PIZZA,
     payload: pizza,
+  };
+};
+export const addCustomer = (customer) => {
+  return {
+    type: ADD_CUSTOMER,
+    payload: customer,
   };
 };
 

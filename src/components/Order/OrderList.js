@@ -1,9 +1,10 @@
 import React from "react";
+import gsap from "gsap";
 import { useSelector } from "react-redux";
 import { TransitionGroup, CSSTransition } from "react-transition-group";
 import OrderItem from "./OrderItem";
 import PizzaIcon from "../../images/pizza/pizza-icon.png";
-import { pizzaAnimation, emptyOrderAnimation } from "../../animations";
+import { addPizzaAnimation } from "../../animations";
 
 const OrderList = () => {
   const orderedPizzas = useSelector((state) => state.order.orderedPizzas);
@@ -12,13 +13,12 @@ const OrderList = () => {
     return (
       <TransitionGroup>
         <CSSTransition
-          classNames="zoomIn"
+          classNames="fadeIn"
           timeout={1500}
           appear
           mountOnEnter
           unmountOnExit
           in={true}
-          // addEndListener={(node, done) => emptyOrderAnimation(node, done)}
         >
           <div className="order-empty">
             <p>Zamów swoją ulubioną picke!</p>
@@ -40,9 +40,12 @@ const OrderList = () => {
             mountOnEnter
             unmountOnExit
             in={orderedPizza.ready}
-            addEndListener={(node, done) =>
-              pizzaAnimation(node, done, orderedPizza.ready)
-            }
+            addEndListener={(node, done) => {
+              addPizzaAnimation(node, done, orderedPizza.ready);
+              if (gsap.isTweening(".main-pizza")) {
+                document.body.style.overflow = "hidden";
+              }
+            }}
           >
             <OrderItem orderedPizza={orderedPizza} />
           </CSSTransition>

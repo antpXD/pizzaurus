@@ -12,6 +12,7 @@
     align-items: flex-end;
     justify-content: flex-end;
     margin-top: 30px;
+    margin-bottom: 20px;
     .order-list {
       display: grid;
       grid-template-columns: repeat(3, 70px);
@@ -43,9 +44,9 @@
       padding-top: 30px;
       transition: all 0.2s ease-in-out;
       button {
-        background: black;
+        background: #844827;
         padding: 10px;
-        border: 2px solid black;
+        border: 2px solid #844827;
         color: white;
         border-radius: 10px;
         font-family: "Economica", sans-serif;
@@ -56,6 +57,20 @@
         &:hover {
           transform: scale(1.1);
           transition: transform 0.2s ease-in-out;
+        }
+      }
+      .dodaj {
+        background: #fff;
+        border: 1px solid #844827;
+        color: #844827;
+      }
+      .zamawiam:disabled {
+        opacity: 0.25;
+        background: #878686;
+        border: 1px solid #878686;
+        color: #fff;
+        &:hover {
+          transform: scale(1);
         }
       }
     }

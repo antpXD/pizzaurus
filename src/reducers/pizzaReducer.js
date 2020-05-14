@@ -1,9 +1,4 @@
-import {
-  SELECT_INGREDIENT,
-  SELECT_SIZE,
-  SET_ORDER,
-  RESET_PIZZA,
-} from "../actions/types";
+import { SELECT_INGREDIENT, SELECT_SIZE, RESET_PIZZA } from "../actions/types";
 
 import BekonImage from "../images/ingredients/bekon.png";
 import CebulaImage from "../images/ingredients/cebula.png";
@@ -19,6 +14,7 @@ const initialState = {
   size: "M",
   price: 15,
   ready: false,
+  quantity: 1,
   ingredients: [
     {
       name: "pieczarki",
@@ -95,11 +91,6 @@ const pizzaReducer = (state = initialState, action) => {
         ...state,
         size: action.size,
         price: action.price,
-      };
-    case SET_ORDER:
-      return {
-        ...state,
-        ready: !state.ready,
       };
     case RESET_PIZZA:
       return {

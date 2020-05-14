@@ -4,7 +4,7 @@ import OrderList from "./OrderList";
 import { addPizza } from "../../actions/orderActions";
 import { resetPizza } from "../../actions/pizzaActions";
 
-const Order = () => {
+const Order = ({ scrollToCheckout }) => {
   const pizza = useSelector((state) => state.pizza);
   const orderedPizzas = useSelector((state) => state.order.orderedPizzas);
   const action = useDispatch();
@@ -26,6 +26,7 @@ const Order = () => {
 
   const onSubmit = (e) => {
     e.preventDefault();
+    window.scrollTo(0, 0);
     action(addPizza(pizza));
     action(resetPizza());
   };
@@ -36,10 +37,23 @@ const Order = () => {
       <div className="summary">
         <OrderList />
         <div className="order-details">
-          <button onClick={onSubmit}>DODAJ</button>
-          <h2>CENA: ${getOrderPrice()}</h2>
+          <button className="dodaj" onClick={onSubmit}>
+            DODAJ
+          </button>
+          <button
+            className="zamawiam"
+            onClick={() => {
+              document.body.style.overflowY = "scroll";
+              document.body.style.overflowX = "hidden";
+              scrollToCheckout();
+            }}
+            disabled={orderedPizzas.length > 0 ? false : true}
+          >
+            POTWIERDZ
+          </button>
         </div>
       </div>
+      <h2>CENA: ${getOrderPrice()}</h2>
     </div>
   );
 };

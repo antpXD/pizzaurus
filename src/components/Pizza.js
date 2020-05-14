@@ -1,11 +1,8 @@
 import React from "react";
 import { useSelector } from "react-redux";
-
+import { TransitionGroup, CSSTransition } from "react-transition-group";
 import PizzaImg from "../images/pizza/pizza.png";
 import PizzaPlateImg from "../images/pizza/pizza-plate.png";
-
-import { motion, AnimatePresence } from "framer-motion";
-import { dropIngredients } from "../animations";
 
 const Pizza = () => {
   const pizza = useSelector((state) => state.pizza);
@@ -34,23 +31,27 @@ const Pizza = () => {
     <div className="pizza-wrapper">
       <div className="main-pizza">
         <div className={`ingredients-container ${scaleIngredientsSize()}`}>
-          <AnimatePresence>
+          <TransitionGroup>
             {pizza.ingredients.map(
               (ingredient, index) =>
                 ingredient.selected && (
-                  <motion.img
+                  <CSSTransition
                     key={index}
-                    initial="from"
-                    animate="to"
-                    exit="exit"
-                    variants={dropIngredients}
-                    className={`ingredients-image ${ingredient.name}`}
-                    src={ingredient.image}
-                    alt=""
-                  />
+                    timeout={500}
+                    mountOnEnter
+                    unmountOnExit
+                    in={ingredient.selected}
+                    classNames="drop"
+                  >
+                    <img
+                      className={`ingredients-image ${ingredient.name}`}
+                      src={ingredient.image}
+                      alt=""
+                    />
+                  </CSSTransition>
                 )
             )}
-          </AnimatePresence>
+          </TransitionGroup>
         </div>
         <img
           className={`pizza ${scalePizzaSize()} ${pizza.ready && "shrink"}`}
