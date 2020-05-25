@@ -34,7 +34,7 @@
     "uuid": "^8.0.0"
   },
   "scripts": {
-    "start": "react-scripts start server.js",
+    "start": "concurrently \"npm start\" \"npm run json-server\" \"npm run server\"",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
