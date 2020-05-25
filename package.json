@@ -34,7 +34,7 @@
     "uuid": "^8.0.0"
   },
   "scripts": {
-    "start": "node server.js",
+    "start": "react-scripts start server.js",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
