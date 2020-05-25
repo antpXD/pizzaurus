@@ -12,17 +12,11 @@ import Form from "./Checkout/Form";
 import Cart from "./Checkout/Cart";
 import { clearCurrentOrder } from "../actions/ordersActions";
 
-import { useMediaQuery } from "@material-ui/core";
-
-// scroll to checkout
-
 const HomePage = () => {
   const pizza = useSelector((state) => state.pizza);
   const cart = useSelector((state) => state.cart);
   const pizzaListInCart = useSelector((state) => state.cart.pizzaListInCart);
   const action = useDispatch();
-  const max890px = useMediaQuery("(max-width:890px)");
-  const min890px = useMediaQuery("(min-width:891px)");
 
   useEffect(() => {
     if ("scrollRestoration" in window.history) {
