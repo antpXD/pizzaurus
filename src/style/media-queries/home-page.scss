@@ -43,13 +43,6 @@
     transition: top 0.6s ease-in-out;
   }
 }
-@media (max-width: 1140px) {
-  .checkout-section {
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-  }
-}
 
 @media (max-width: 890px) {
   .navbar {

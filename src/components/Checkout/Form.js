@@ -187,14 +187,11 @@ const Form = () => {
             <h3>Czas dostawy</h3>
             <h5>O której zamówienie ma być dostarczone</h5>
             <div className="inputs">
-              <div className="box box--active" style={{ maxWidth: 320 }}>
+              <div className="box box--active">
                 <CheckSVG />
                 <p>Jak najszybciej</p>
               </div>
-              <div
-                className="box"
-                style={{ maxWidth: 320, pointerEvents: "none" }}
-              >
+              <div className="box" style={{ pointerEvents: "none" }}>
                 <CheckSVG />
                 {/* <Field
                   name="datetimepicker"

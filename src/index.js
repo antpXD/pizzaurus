@@ -71,6 +71,7 @@ const theme = createMuiTheme({
         transition: "all .2s ease-in-out",
         borderRadius: 8,
         height: 75,
+        minWidth: "190px",
         padding: "0 4px 8px 4px",
         "&:hover": {
           backgroundColor: "#fff",

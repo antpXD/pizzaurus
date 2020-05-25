@@ -1,32 +1,3 @@
-// import React from "react";
-// import { Provider } from "react-redux";
-// import store from "./store";
-
-// import HomePage from "./components/HomePage";
-// import Navbar from "./components/Navbar";
-
-// import "./style/App.scss";
-
-// import { loadStripe } from "@stripe/stripe-js";
-// import { Elements } from "@stripe/react-stripe-js";
-
-// const stripePromise = loadStripe("pk_test_YJLjuyV6yDha7pfYx9ggIEQN00L2IPKT18");
-
-// function App() {
-//   return (
-//     <Elements stripe={stripePromise}>
-//       <Provider store={store}>
-//         <>
-//           <Navbar />
-//           <HomePage />
-//         </>
-//       </Provider>
-//     </Elements>
-//   );
-// }
-
-// export default App;
-
 import React from "react";
 import { Switch, Route, useLocation } from "react-router-dom";
 import { TransitionGroup, CSSTransition } from "react-transition-group";

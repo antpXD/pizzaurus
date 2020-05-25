@@ -1,16 +1,19 @@
 const jsonServer = require("json-server");
+const express = require("express");
 const server = jsonServer.create();
 const router = jsonServer.router("db.json");
 const middlewares = jsonServer.defaults();
-// przeniesc do .env
-const stripe = require("stripe")("sk_test_jP5VqkotbArwkqCWNVSefTvX00u0nBnsiW");
+const path = require("path");
+require("dotenv").config();
+
+const stripe = require("stripe")(process.env.SECRET_KEY);
 
 // Set default middlewares (logger, static, cors and no-cache)
 server.use(middlewares);
 
 // Add custom routes before JSON Server router
 server.get("/payment", (req, res) => {
-  res.send("ELO");
+  res.send("Hi!");
   res.jsonp(req.query);
 });
 
@@ -37,8 +40,17 @@ server.use(async (req, res) => {
   }
 });
 
+if (process.env.NODE_ENV === "production") {
+  // set static folder
+  server.use(express.static("client/build"));
+
+  server.get("*", (req, res) =>
+    res.sendFile(path.resolve(__dirname, "build", "index.html"))
+  );
+}
+
 // Use default router
 server.use(router);
-server.listen(5000, () => {
-  console.log("JSON Server is running");
-});
+const PORT = process.env.PORT || 5000;
+
+server.listen(PORT, () => console.log(`Server started on port ${PORT}`));
