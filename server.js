@@ -42,8 +42,7 @@ server.use(async (req, res) => {
 
 if (process.env.NODE_ENV === "production") {
   // set static folder
-  server.use(express.static("client/build"));
-
+  server.use(express.static("build"));
   server.get("*", (req, res) =>
     res.sendFile(path.resolve(__dirname, "build", "index.html"))
   );

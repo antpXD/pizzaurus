@@ -34,13 +34,14 @@
     "uuid": "^8.0.0"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start": "node server.js json-server --watch db.json --port 5000 npm start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "server": "nodemon server.js",
     "json-server": "json-server --watch db.json --port 5000",
-    "dev": "concurrently \"npm start\" \"npm run json-server\" \"npm run server\""
+    "dev": "concurrently \"npm start\" \"npm run json-server\" \"npm run server\"",
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install && npm run build"
   },
   "eslintConfig": {
     "extends": "react-app"
