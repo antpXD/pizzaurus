@@ -4,12 +4,18 @@ import { useSelector } from "react-redux";
 import { TransitionGroup, CSSTransition } from "react-transition-group";
 import OrderItem from "./OrderItem";
 import PizzaIcon from "../../images/pizza/pizza-icon.png";
-import { addPizzaAnimation } from "../../animations";
+import {
+  addPizzaAnimationOnBigScreen,
+  addPizzaAnimationOnSmallScreen,
+} from "../../animations";
+import { useMediaQuery } from "@material-ui/core";
 
 const OrderList = () => {
-  const orderedPizzas = useSelector((state) => state.order.orderedPizzas);
+  const pizzaListInCart = useSelector((state) => state.cart.pizzaListInCart);
 
-  if (orderedPizzas !== null && orderedPizzas.length === 0) {
+  const max890px = useMediaQuery("(max-width:890px)");
+
+  if (pizzaListInCart !== null && pizzaListInCart.length === 0) {
     return (
       <TransitionGroup>
         <CSSTransition
@@ -31,23 +37,26 @@ const OrderList = () => {
 
   return (
     <TransitionGroup className="order-list">
-      {orderedPizzas.length > 0 &&
-        orderedPizzas.map((orderedPizza) => (
+      {pizzaListInCart.length > 0 &&
+        pizzaListInCart.map((pizzaInCart) => (
           <CSSTransition
-            key={orderedPizza.id}
+            key={pizzaInCart.id}
             timeout={1000}
             appear
             mountOnEnter
             unmountOnExit
-            in={orderedPizza.ready}
+            in={pizzaInCart.ready}
             addEndListener={(node, done) => {
-              addPizzaAnimation(node, done, orderedPizza.ready);
+              !max890px
+                ? addPizzaAnimationOnBigScreen(node, done, pizzaInCart.ready)
+                : addPizzaAnimationOnSmallScreen(node, done, pizzaInCart.ready);
               if (gsap.isTweening(".main-pizza")) {
                 document.body.style.overflow = "hidden";
+                document.querySelector("#confirmOrder").disabled = true;
               }
             }}
           >
-            <OrderItem orderedPizza={orderedPizza} />
+            <OrderItem pizzaInCart={pizzaInCart} />
           </CSSTransition>
         ))}
     </TransitionGroup>

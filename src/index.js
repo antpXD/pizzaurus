@@ -1,7 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import App from "./App";
-
+import { BrowserRouter } from "react-router-dom";
 import { createMuiTheme } from "@material-ui/core/styles";
 import { ThemeProvider } from "@material-ui/styles";
 
@@ -44,7 +44,7 @@ const theme = createMuiTheme({
       },
       root: {
         fontFamily: '"Quicksand", sans-serif',
-        fontWeight: "600",
+        fontWeight: "515",
         fontSize: "14px",
         color: "#4a4a4a",
         // backgroundColor: "#fff",
@@ -126,17 +126,57 @@ const theme = createMuiTheme({
         },
       },
     },
+    MuiExpansionPanel: {
+      root: {
+        position: "inital",
+        border: "none",
+        boxShadow: "none",
+      },
+    },
+    MuiExpansionPanelSummary: {
+      root: {
+        padding: 0,
+        margin: 0,
+      },
+      content: {
+        display: "flex",
+        justifyContent: "center",
+        "&$expanded": {
+          margin: 0,
+        },
+      },
+    },
+    MuiExpansionPanelDetails: {
+      root: {
+        padding: 0,
+      },
+    },
     MuiFormHelperText: {
       root: {
         fontWeight: 800,
+      },
+    },
+    MuiSnackbarContent: {
+      root: {
+        backgroundColor: "#EB321E",
+      },
+    },
+    MuiCircularProgress: {
+      root: {
+        margin: "0 20px",
+      },
+      circle: {
+        stroke: "white",
       },
     },
   },
 });
 
 ReactDOM.render(
-  <ThemeProvider theme={theme}>
-    <App />
-  </ThemeProvider>,
+  <BrowserRouter>
+    <ThemeProvider theme={theme}>
+      <App />
+    </ThemeProvider>
+  </BrowserRouter>,
   document.getElementById("root")
 );

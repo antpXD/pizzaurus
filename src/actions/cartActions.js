@@ -1,4 +1,10 @@
-import { SET_LOADING, ADD_PIZZA, REMOVE_PIZZA, ADD_CUSTOMER } from "./types";
+import {
+  SET_LOADING,
+  ADD_PIZZA,
+  REMOVE_PIZZA,
+  ADD_CUSTOMER,
+  CLEAR_CART,
+} from "./types";
 
 export const setLoading = () => {
   return {
@@ -22,10 +28,14 @@ export const addCustomer = (customer) => {
   };
 };
 
-export const removePizza = (orderedPizza) => {
-  // orderedPizza.ready = false;
+export const clearCart = () => {
+  return {
+    type: CLEAR_CART,
+  };
+};
+export const removePizza = (pizzaInCart) => {
   return {
     type: REMOVE_PIZZA,
-    payload: orderedPizza,
+    payload: pizzaInCart,
   };
 };

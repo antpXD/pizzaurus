@@ -1,4 +1,7 @@
 import React, { useEffect } from "react";
+import { v4 as uuidv4 } from "uuid";
+import { useSelector, useDispatch } from "react-redux";
+// eslint-disable-next-line
 import { Element, animateScroll as scroll, scroller } from "react-scroll";
 import Pizza from "./Pizza";
 import Order from "./Order/Order";
@@ -7,27 +10,31 @@ import Menu from "./Menu";
 import Leaves from "./Leaves";
 import Form from "./Checkout/Form";
 import Cart from "./Checkout/Cart";
+import { clearCurrentOrder } from "../actions/ordersActions";
 
-import { useSelector } from "react-redux";
+import { useMediaQuery } from "@material-ui/core";
 
 // scroll to checkout
 
 const HomePage = () => {
   const pizza = useSelector((state) => state.pizza);
-  const orderedPizzas = useSelector((state) => state.order.orderedPizzas);
-
-  // const scrollToTop = () => {
-  //   scroll.scrollToTop();
-  // };
+  const cart = useSelector((state) => state.cart);
+  const pizzaListInCart = useSelector((state) => state.cart.pizzaListInCart);
+  const action = useDispatch();
+  const max890px = useMediaQuery("(max-width:890px)");
+  const min890px = useMediaQuery("(min-width:891px)");
 
   useEffect(() => {
     if ("scrollRestoration" in window.history) {
       window.history.scrollRestoration = "manual";
     }
+    action(clearCurrentOrder());
+    cart.id = uuidv4();
+    // eslint-disable-next-line
   }, []);
 
   const scrollToCheckout = () => {
-    if (orderedPizzas.length > 0) {
+    if (pizzaListInCart.length > 0) {
       scroller.scrollTo("scroll-to-checkout", {
         duration: 800,
         delay: 0,
@@ -48,21 +55,20 @@ const HomePage = () => {
     <>
       <Element className="home-container" name="scroll-to-home">
         <Leaves />
-        <h1>Stwórz swoją pizzę</h1>
-
-        <div className="details">
-          <Size />
-          <h2 style={{ fontSize: "2rem" }}>${activePizzaPrice()}</h2>
-          <Order scrollToCheckout={scrollToCheckout} />
-        </div>
-
         <div className="pizza-menu">
           <Menu />
           <Pizza />
         </div>
+        <h1>Stwórz swoją pizzę</h1>
+        <div className="details">
+          <Size />
+          <h2 className="pizza-price">${activePizzaPrice()}</h2>
+
+          <Order scrollToCheckout={scrollToCheckout} />
+        </div>
       </Element>
 
-      {orderedPizzas.length > 0 && (
+      {pizzaListInCart.length > 0 && (
         <Element name="scroll-to-checkout">
           <div className="checkout-section">
             <Leaves />

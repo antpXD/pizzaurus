@@ -8,8 +8,16 @@
 @import "components/pizza.scss";
 @import "components/menu.scss";
 @import "components/leaves.scss";
+@import "components/size.scss";
 @import "components/order-section/container.scss";
 @import "components/order-section/item.scss";
+@import "components/success.scss";
+@import "components/tooltip.scss";
 
 @import "animations/order-item.scss";
 @import "animations/ingredients.scss";
+@import "animations/page.scss";
+
+@import "media-queries/home-page.scss";
+@import "media-queries/navbar.scss";
+@import "media-queries/leaves.scss";

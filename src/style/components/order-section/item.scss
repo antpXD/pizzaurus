@@ -3,7 +3,6 @@ $pizza-size: 62px;
 .mini-pizza-container:hover .tooltip {
   visibility: visible;
   opacity: 1;
-  // transform: rotate(-30deg);
   transition: opacity 0.2s ease-in-out;
   transition-delay: 0.4s;
 }
@@ -106,45 +105,6 @@ $pizza-size: 62px;
         transform: rotate(-30deg);
         transition: all 0.3s ease-in-out;
       }
-    }
-  }
-
-  .tooltip {
-    visibility: hidden;
-    opacity: 0;
-    background-color: #f8ece5;
-    color: #000;
-    border-radius: 6px;
-    padding: 8px 15px;
-    position: absolute;
-    z-index: 1;
-    transition: opacity 0.2s ease-in-out;
-    transition-delay: 0.4s;
-    min-width: 180px;
-    bottom: 120px;
-    left: 50%;
-    margin-left: -90px;
-    &::after {
-      content: " ";
-      position: absolute;
-      top: 100%;
-      left: 50%;
-      margin-left: -13px;
-      border-width: 12px;
-      border-style: solid;
-      border-color: #f8ece5 transparent transparent transparent;
-    }
-    h4 {
-      color: black;
-      font-family: "Quicksand", sans-serif;
-      font-size: 13px;
-      // font-weight: 500;
-    }
-    .ingredients-list {
-      text-align: justify;
-      font-size: 12px;
-      line-height: 1.2;
-      font-family: "Quicksand", sans-serif;
     }
   }
 

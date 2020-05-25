@@ -1,0 +1,22 @@
+@media (max-width: 890px) {
+  .leaf-2 {
+    top: 170px;
+    left: 30px;
+    transform: scale(0.7);
+  }
+}
+
+@media (max-width: 640px) {
+  .leaf-2 {
+    left: -20px;
+    transform: scale(0.7) rotate(270deg);
+  }
+}
+
+@media (max-width: 470px) {
+  .leaf-2 {
+    left: -60px;
+    top: 190px;
+    transform: scale(0.7) rotate(270deg);
+  }
+}

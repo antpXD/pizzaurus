@@ -1,124 +1,543 @@
 {
   "orders": [
     {
+      "id": "9a90db6e-64b6-4e5e-b873-36df60a18d20",
       "customer": {
         "city": "Białystok",
-        "street": "Białostoczek",
-        "house": "22 / 23",
-        "phone": "500 000 000",
-        "email": "siema@siiema.gmail.com"
+        "street": "Białostoczek 22",
+        "phone": "+48505167689",
+        "email": "piotrekantoniakk@gmail.com",
+        "house": "22 / 23"
       },
-      "pizza": [
+      "pizzaListInCart": [
         {
-          "size": "L",
-          "price": 15,
-          "ready": "true",
+          "id": 1589839523839,
+          "size": "S",
+          "price": 10,
+          "ready": true,
           "quantity": 1,
           "ingredients": [
             {
               "name": "pieczarki",
               "selected": false,
-              "price": "0.5"
+              "image": "/static/media/pieczarki.6bb801df.png",
+              "pathPosition": "170",
+              "price": 0.5
             },
             {
               "name": "oliwki",
               "selected": false,
-              "price": "0.5"
+              "image": "/static/media/oliwki.ce7bffb3.png",
+              "pathPosition": "340",
+              "price": 0.5
             },
             {
               "name": "pepperoni",
               "selected": false,
-              "price": "0.5"
+              "image": "/static/media/pepperoni.434d64e1.png",
+              "pathPosition": "480",
+              "price": 1
             },
             {
               "name": "pomidory",
-              "selected": false,
-              "price": "0.5"
+              "selected": true,
+              "image": "/static/media/pomidory.d3f65aeb.png",
+              "pathPosition": "660",
+              "price": 1
             },
             {
               "name": "chilli",
               "selected": false,
-              "price": "0.5"
+              "image": "/static/media/chilli.d7bd9076.png",
+              "pathPosition": "830",
+              "price": 1.5
             },
             {
               "name": "bekon",
               "selected": false,
-              "price": "0.5"
+              "image": "/static/media/bekon.74e5e872.png",
+              "pathPosition": "950",
+              "price": 2
             },
             {
               "name": "cebula",
               "selected": false,
-              "price": "0.5"
+              "image": "/static/media/cebula.cd7b8e87.png",
+              "pathPosition": "1070",
+              "price": 0.5
             },
             {
               "name": "papryka",
               "selected": false,
-              "price": "0.5"
+              "image": "/static/media/papryka.2594a1cf.png",
+              "pathPosition": "1210",
+              "price": 1
             }
           ]
         }
-      ],
-      "id": 1
+      ]
     },
     {
+      "id": "f794eebd-0d2f-4695-9dff-d7de126301a8",
       "customer": {
         "city": "Białystok",
-        "street": "Białostoczek",
-        "house": "22 / 23",
-        "phone": "500 000 000",
-        "email": "siema@siiema.gmail.com"
+        "street": "Białostoczek 22",
+        "phone": "+48505167689",
+        "email": "piotrekantoniakk@gmail.com",
+        "house": "22 / 23"
       },
-      "pizza": [
+      "pizzaListInCart": [
         {
-          "size": "L",
-          "price": 15,
-          "ready": "true",
+          "id": 1590189956787,
+          "size": "S",
+          "price": 10,
+          "ready": true,
           "quantity": 1,
           "ingredients": [
             {
               "name": "pieczarki",
               "selected": false,
-              "price": "0.5"
+              "image": "/static/media/pieczarki.6bb801df.png",
+              "pathPosition": "170",
+              "price": 0.5
             },
             {
               "name": "oliwki",
               "selected": false,
-              "price": "0.5"
+              "image": "/static/media/oliwki.ce7bffb3.png",
+              "pathPosition": "340",
+              "price": 0.5
             },
             {
               "name": "pepperoni",
               "selected": false,
-              "price": "0.5"
+              "image": "/static/media/pepperoni.434d64e1.png",
+              "pathPosition": "480",
+              "price": 1
             },
             {
               "name": "pomidory",
+              "selected": true,
+              "image": "/static/media/pomidory.d3f65aeb.png",
+              "pathPosition": "660",
+              "price": 1
+            },
+            {
+              "name": "chilli",
+              "selected": true,
+              "image": "/static/media/chilli.d7bd9076.png",
+              "pathPosition": "830",
+              "price": 1.5
+            },
+            {
+              "name": "bekon",
+              "selected": true,
+              "image": "/static/media/bekon.74e5e872.png",
+              "pathPosition": "950",
+              "price": 2
+            },
+            {
+              "name": "cebula",
+              "selected": true,
+              "image": "/static/media/cebula.cd7b8e87.png",
+              "pathPosition": "1070",
+              "price": 0.5
+            },
+            {
+              "name": "papryka",
+              "selected": true,
+              "image": "/static/media/papryka.2594a1cf.png",
+              "pathPosition": "1210",
+              "price": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "b8e72e75-3ae8-4776-b242-48a75fef1e2e",
+      "customer": {
+        "city": "Białystok",
+        "street": "Białostoczek 22",
+        "phone": "+48505167689",
+        "email": "piotrekantoniakk@gmail.com",
+        "house": "22 / 23"
+      },
+      "pizzaListInCart": [
+        {
+          "id": 1590233178734,
+          "size": "M",
+          "price": 15,
+          "ready": true,
+          "quantity": 1,
+          "ingredients": [
+            {
+              "name": "pieczarki",
               "selected": false,
-              "price": "0.5"
+              "image": "/static/media/pieczarki.6bb801df.png",
+              "pathPosition": "170",
+              "price": 0.5
+            },
+            {
+              "name": "oliwki",
+              "selected": false,
+              "image": "/static/media/oliwki.ce7bffb3.png",
+              "pathPosition": "340",
+              "price": 0.5
+            },
+            {
+              "name": "pepperoni",
+              "selected": false,
+              "image": "/static/media/pepperoni.434d64e1.png",
+              "pathPosition": "480",
+              "price": 1
+            },
+            {
+              "name": "pomidory",
+              "selected": true,
+              "image": "/static/media/pomidory.d3f65aeb.png",
+              "pathPosition": "660",
+              "price": 1
             },
             {
               "name": "chilli",
               "selected": false,
-              "price": "0.5"
+              "image": "/static/media/chilli.d7bd9076.png",
+              "pathPosition": "830",
+              "price": 1.5
             },
             {
               "name": "bekon",
               "selected": false,
-              "price": "0.5"
+              "image": "/static/media/bekon.74e5e872.png",
+              "pathPosition": "950",
+              "price": 2
             },
             {
               "name": "cebula",
               "selected": false,
-              "price": "0.5"
+              "image": "/static/media/cebula.cd7b8e87.png",
+              "pathPosition": "1070",
+              "price": 0.5
             },
             {
               "name": "papryka",
               "selected": false,
-              "price": "0.5"
+              "image": "/static/media/papryka.2594a1cf.png",
+              "pathPosition": "1210",
+              "price": 1
             }
           ]
         }
-      ],
-      "id": 2
+      ]
+    },
+    {
+      "id": "28b3fff7-3aa2-42d0-a3bd-be57434f9610",
+      "customer": {
+        "city": "Białystok",
+        "street": "Białostoczek 22",
+        "phone": "+48505167689",
+        "email": "piotrekantoniakk@gmail.com",
+        "house": "22 / 23"
+      },
+      "pizzaListInCart": [
+        {
+          "id": 1590322325041,
+          "size": "L",
+          "price": 20,
+          "ready": true,
+          "quantity": 1,
+          "ingredients": [
+            {
+              "name": "pieczarki",
+              "selected": false,
+              "image": "/static/media/pieczarki.6bb801df.png",
+              "pathPosition": "170",
+              "price": 0.5
+            },
+            {
+              "name": "oliwki",
+              "selected": false,
+              "image": "/static/media/oliwki.ce7bffb3.png",
+              "pathPosition": "340",
+              "price": 0.5
+            },
+            {
+              "name": "pepperoni",
+              "selected": false,
+              "image": "/static/media/pepperoni.434d64e1.png",
+              "pathPosition": "480",
+              "price": 1
+            },
+            {
+              "name": "pomidory",
+              "selected": true,
+              "image": "/static/media/pomidory.d3f65aeb.png",
+              "pathPosition": "660",
+              "price": 1
+            },
+            {
+              "name": "chilli",
+              "selected": false,
+              "image": "/static/media/chilli.d7bd9076.png",
+              "pathPosition": "830",
+              "price": 1.5
+            },
+            {
+              "name": "bekon",
+              "selected": false,
+              "image": "/static/media/bekon.74e5e872.png",
+              "pathPosition": "950",
+              "price": 2
+            },
+            {
+              "name": "cebula",
+              "selected": false,
+              "image": "/static/media/cebula.cd7b8e87.png",
+              "pathPosition": "1070",
+              "price": 0.5
+            },
+            {
+              "name": "papryka",
+              "selected": false,
+              "image": "/static/media/papryka.2594a1cf.png",
+              "pathPosition": "1210",
+              "price": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "cb9910b8-3c08-4f37-90c6-1bc489eff4cf",
+      "customer": {
+        "city": "Białystok",
+        "street": "Białostoczek 22",
+        "phone": "+48505167689",
+        "email": "piotrekantoniakk@gmail.com",
+        "house": "22 / 23"
+      },
+      "pizzaListInCart": [
+        {
+          "id": 1590322459467,
+          "size": "M",
+          "price": 15,
+          "ready": true,
+          "quantity": 1,
+          "ingredients": [
+            {
+              "name": "pieczarki",
+              "selected": false,
+              "image": "/static/media/pieczarki.6bb801df.png",
+              "pathPosition": "170",
+              "price": 0.5
+            },
+            {
+              "name": "oliwki",
+              "selected": false,
+              "image": "/static/media/oliwki.ce7bffb3.png",
+              "pathPosition": "340",
+              "price": 0.5
+            },
+            {
+              "name": "pepperoni",
+              "selected": false,
+              "image": "/static/media/pepperoni.434d64e1.png",
+              "pathPosition": "480",
+              "price": 1
+            },
+            {
+              "name": "pomidory",
+              "selected": false,
+              "image": "/static/media/pomidory.d3f65aeb.png",
+              "pathPosition": "660",
+              "price": 1
+            },
+            {
+              "name": "chilli",
+              "selected": false,
+              "image": "/static/media/chilli.d7bd9076.png",
+              "pathPosition": "830",
+              "price": 1.5
+            },
+            {
+              "name": "bekon",
+              "selected": false,
+              "image": "/static/media/bekon.74e5e872.png",
+              "pathPosition": "950",
+              "price": 2
+            },
+            {
+              "name": "cebula",
+              "selected": false,
+              "image": "/static/media/cebula.cd7b8e87.png",
+              "pathPosition": "1070",
+              "price": 0.5
+            },
+            {
+              "name": "papryka",
+              "selected": false,
+              "image": "/static/media/papryka.2594a1cf.png",
+              "pathPosition": "1210",
+              "price": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "70fd8ff2-a3ab-4bb8-8928-ea20cb637dee",
+      "customer": {
+        "city": "Białystok",
+        "street": "Białostoczek 22",
+        "phone": "+48505167689",
+        "email": "piotrekantoniakk@gmail.com",
+        "house": "22 / 23"
+      },
+      "pizzaListInCart": [
+        {
+          "id": 1590344347328,
+          "size": "M",
+          "price": 15,
+          "ready": true,
+          "quantity": 1,
+          "ingredients": [
+            {
+              "name": "pieczarki",
+              "selected": true,
+              "image": "/static/media/pieczarki.6bb801df.png",
+              "pathPosition": "170",
+              "price": 0.5
+            },
+            {
+              "name": "oliwki",
+              "selected": true,
+              "image": "/static/media/oliwki.ce7bffb3.png",
+              "pathPosition": "340",
+              "price": 0.5
+            },
+            {
+              "name": "pepperoni",
+              "selected": true,
+              "image": "/static/media/pepperoni.434d64e1.png",
+              "pathPosition": "480",
+              "price": 1
+            },
+            {
+              "name": "pomidory",
+              "selected": true,
+              "image": "/static/media/pomidory.d3f65aeb.png",
+              "pathPosition": "660",
+              "price": 1
+            },
+            {
+              "name": "chilli",
+              "selected": true,
+              "image": "/static/media/chilli.d7bd9076.png",
+              "pathPosition": "830",
+              "price": 1.5
+            },
+            {
+              "name": "bekon",
+              "selected": true,
+              "image": "/static/media/bekon.74e5e872.png",
+              "pathPosition": "950",
+              "price": 2
+            },
+            {
+              "name": "cebula",
+              "selected": true,
+              "image": "/static/media/cebula.cd7b8e87.png",
+              "pathPosition": "1070",
+              "price": 0.5
+            },
+            {
+              "name": "papryka",
+              "selected": true,
+              "image": "/static/media/papryka.2594a1cf.png",
+              "pathPosition": "1210",
+              "price": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "fef120a5-bfcc-4a08-a622-f36657176c45",
+      "customer": {
+        "city": "Białystok",
+        "street": "Białostoczek 22",
+        "phone": "+48505167689",
+        "email": "piotrekantoniakk@gmail.com",
+        "house": "22 / 23"
+      },
+      "pizzaListInCart": [
+        {
+          "id": 1590357610145,
+          "size": "M",
+          "price": 15,
+          "ready": true,
+          "quantity": 1,
+          "ingredients": [
+            {
+              "name": "pieczarki",
+              "selected": false,
+              "image": "/static/media/pieczarki.6bb801df.png",
+              "pathPosition": "170",
+              "price": 0.5
+            },
+            {
+              "name": "oliwki",
+              "selected": false,
+              "image": "/static/media/oliwki.ce7bffb3.png",
+              "pathPosition": "340",
+              "price": 0.5
+            },
+            {
+              "name": "pepperoni",
+              "selected": false,
+              "image": "/static/media/pepperoni.434d64e1.png",
+              "pathPosition": "480",
+              "price": 1
+            },
+            {
+              "name": "pomidory",
+              "selected": true,
+              "image": "/static/media/pomidory.d3f65aeb.png",
+              "pathPosition": "660",
+              "price": 1
+            },
+            {
+              "name": "chilli",
+              "selected": false,
+              "image": "/static/media/chilli.d7bd9076.png",
+              "pathPosition": "830",
+              "price": 1.5
+            },
+            {
+              "name": "bekon",
+              "selected": false,
+              "image": "/static/media/bekon.74e5e872.png",
+              "pathPosition": "950",
+              "price": 2
+            },
+            {
+              "name": "cebula",
+              "selected": false,
+              "image": "/static/media/cebula.cd7b8e87.png",
+              "pathPosition": "1070",
+              "price": 0.5
+            },
+            {
+              "name": "papryka",
+              "selected": false,
+              "image": "/static/media/papryka.2594a1cf.png",
+              "pathPosition": "1210",
+              "price": 1
+            }
+          ]
+        }
+      ]
     }
   ]
 }

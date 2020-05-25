@@ -13,6 +13,21 @@
   .product-container {
     width: calc(100% - 10px);
     padding: 0 10px;
+    max-height: 475px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    &::-webkit-scrollbar,
+    &::-webkit-scrollbar-thumb {
+      background: transparent;
+      color: rgba(0, 0, 0, 0.25);
+      width: 17px;
+      border-radius: 10px;
+      background-clip: padding-box;
+      border: 5px solid transparent;
+    }
+    &::-webkit-scrollbar-thumb {
+      box-shadow: inset 0 0 0 10px;
+    }
     .product-item {
       display: flex;
       flex-direction: row;
@@ -62,13 +77,7 @@
         text-align: end;
       }
     }
-    .total-price {
-      display: flex;
-      justify-content: space-between;
-      font-family: "Quicksand", sans-serif;
-      font-size: 18px;
-      font-weight: 800;
-    }
+
     button {
       font-family: "Quicksand", sans-serif;
       font-size: 20px;
@@ -88,5 +97,17 @@
         background-color: #ff3232;
       }
     }
+  }
+  .total-price {
+    display: flex;
+    justify-content: space-between;
+    font-family: "Quicksand", sans-serif;
+    font-size: 18px;
+    font-weight: 800;
+    width: calc(100% - 40px);
+    padding: 15px 10px 0 10px;
+    margin-top: 15px;
+    border-top: 1px solid #ff0000;
+    // border-radius: 8px;
   }
 }

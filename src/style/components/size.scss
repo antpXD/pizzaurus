@@ -1,0 +1,38 @@
+.size-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 3;
+  height: 165px;
+  background-color: #fff;
+  border-radius: 20px;
+  padding: 20px;
+  max-width: 300px;
+  h2 {
+    font-family: "Economica", sans-serif;
+    font-size: 18px;
+    font-weight: bold;
+    letter-spacing: 0.14em;
+  }
+  .circles {
+    display: flex;
+    padding-top: 30px;
+  }
+  .circle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    height: 60px;
+    width: 60px;
+    margin-right: 26px;
+    border: 1px solid #cccccc;
+    color: #cccccc;
+    z-index: 99;
+    cursor: pointer;
+  }
+  .selected {
+    border: 1px solid #1a1a1a;
+    color: #1a1a1a;
+  }
+}

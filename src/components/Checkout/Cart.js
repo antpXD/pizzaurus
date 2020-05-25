@@ -1,50 +1,35 @@
 import React from "react";
 import { useSelector } from "react-redux";
-import { getOrderedPizzaPrice } from "../../helpers/functions";
+import { getOrderedPizzaPrice, getTotalPrice } from "../../helpers/price";
 
 const Cart = () => {
-  const orderedPizzas = useSelector((state) => state.order.orderedPizzas);
-
-  const getTotalPrice = () => {
-    let ingredientsPrice = 0;
-    let pizzaPrice = 0;
-    orderedPizzas.map(
-      (orderedPizza) =>
-        (pizzaPrice += orderedPizza.price) &&
-        orderedPizza.ingredients.map(
-          (ingredient) =>
-            ingredient.selected === true &&
-            (ingredientsPrice += ingredient.price)
-        )
-    );
-    return ingredientsPrice + pizzaPrice;
-  };
+  const pizzaListInCart = useSelector((state) => state.cart.pizzaListInCart);
 
   return (
     <div className="cart">
       <h1>Twój koszyk</h1>
       <div className="product-container">
-        {orderedPizzas.map((orderedPizza, index) => (
+        {pizzaListInCart.map((pizzaInCart, index) => (
           <div key={index} className="product-item">
             <div className="details">
               <div className="quantity">
                 <i className="fas fa-chevron-up" />
-                {orderedPizza.quantity}x
+                {pizzaInCart.quantity}x
                 <i className="fas fa-chevron-down" />
               </div>
               <div className="pizza">
                 <span className="size">
-                  {orderedPizza.size === "S"
+                  {pizzaInCart.size === "S"
                     ? "Mała pizza z:"
-                    : orderedPizza.size === "M"
+                    : pizzaInCart.size === "M"
                     ? "Średnia pizza z:"
                     : "Giga pizza z:"}
                 </span>
                 <div className="ingredients">
-                  {orderedPizza.ingredients.filter(
+                  {pizzaInCart.ingredients.filter(
                     (ingredient) => ingredient.selected
                   ).length > 0 ? (
-                    orderedPizza.ingredients.map(
+                    pizzaInCart.ingredients.map(
                       (ingredient, index) =>
                         ingredient.selected && (
                           <span key={index} className="item">
@@ -58,14 +43,13 @@ const Cart = () => {
                 </div>
               </div>
             </div>
-            <div className="price">$ {getOrderedPizzaPrice(orderedPizza)}</div>
+            <div className="price">$ {getOrderedPizzaPrice(pizzaInCart)}</div>
           </div>
         ))}
-
-        <div className="total-price">
-          <span>Cena zamówienia:</span>
-          <span>$ {getTotalPrice()}</span>
-        </div>
+      </div>
+      <div className="total-price">
+        <span>Cena zamówienia:</span>
+        <span>$ {getTotalPrice(pizzaListInCart)}</span>
       </div>
     </div>
   );

@@ -1,0 +1,23 @@
+.page-enter {
+  opacity: 0;
+  transform: scale(0.9);
+}
+// "start" animation to
+.page-enter-active {
+  opacity: 1;
+  transform: scale(1);
+  transition: opacity 500ms, transform 500ms;
+}
+
+// "end" animation from
+.page-exit {
+  opacity: 1;
+  transform: scale(1);
+}
+
+// "end" animation to
+.page-exit-active {
+  opacity: 0;
+  transform: scale(1.1);
+  transition: opacity 500ms, transform 500ms;
+}

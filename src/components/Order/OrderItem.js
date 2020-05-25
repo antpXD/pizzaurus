@@ -2,21 +2,21 @@ import React from "react";
 import PropTypes from "prop-types";
 
 import { useDispatch } from "react-redux";
-import { removePizza } from "../../actions/orderActions";
-import { getOrderedPizzaPrice } from "../../helpers/functions";
+import { removePizza } from "../../actions/cartActions";
+import { getOrderedPizzaPrice } from "../../helpers/price";
 
 import PizzaImg from "../../images/pizza/pizza.png";
 import PizzaPlateImg from "../../images/pizza/pizza-plate.png";
 
-const OrderItem = ({ orderedPizza }) => {
+const OrderItem = ({ pizzaInCart }) => {
   const action = useDispatch();
 
   const scalePizzaSize = () => {
-    if (orderedPizza.size === "S") {
+    if (pizzaInCart.size === "S") {
       return "s-pizza";
-    } else if (orderedPizza.size === "M") {
+    } else if (pizzaInCart.size === "M") {
       return "m-pizza";
-    } else if (orderedPizza.size === "L") {
+    } else if (pizzaInCart.size === "L") {
       return "l-pizza";
     }
   };
@@ -27,11 +27,11 @@ const OrderItem = ({ orderedPizza }) => {
         className="mini-pizza-wrapper"
         onClick={() => {
           window.scrollTo(0, 0);
-          action(removePizza(orderedPizza));
+          action(removePizza(pizzaInCart));
         }}
       >
         <div className="ingredients-container">
-          {orderedPizza.ingredients.map(
+          {pizzaInCart.ingredients.map(
             (ingredient) =>
               ingredient.selected && (
                 <img
@@ -55,27 +55,27 @@ const OrderItem = ({ orderedPizza }) => {
       </div>
       <div className="tooltip">
         <div style={{ display: "flex", justifyContent: "space-between" }}>
-          <h4>Size: {orderedPizza.size}</h4>
-          <h4>Price: ${getOrderedPizzaPrice(orderedPizza)}</h4>
+          <h4>Size: {pizzaInCart.size}</h4>
+          <h4>Price: ${getOrderedPizzaPrice(pizzaInCart)}</h4>
         </div>
         <h4 style={{ paddingTop: "5px" }}>Składniki: </h4>
         <p className="ingredients-list">
-          {orderedPizza.ingredients.map(
+          {pizzaInCart.ingredients.map(
             (ingredient, index) =>
               ingredient.selected && (
                 <span key={index}>{ingredient.name} | </span>
               )
           )}
-          {orderedPizza.ingredients.length === 0 && <span>Brak</span>}
+          {pizzaInCart.ingredients.length === 0 && <span>Brak</span>}
         </p>
       </div>
-      <p className="price">${getOrderedPizzaPrice(orderedPizza)}</p>
+      <p className="price">${getOrderedPizzaPrice(pizzaInCart)}</p>
     </div>
   );
 };
 
 OrderItem.propTypes = {
-  orderedPizza: PropTypes.object.isRequired,
+  pizzaInCart: PropTypes.object.isRequired,
 };
 
 export default OrderItem;
