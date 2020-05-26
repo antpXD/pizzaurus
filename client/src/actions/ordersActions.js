@@ -22,7 +22,7 @@ export const addOrder = (order) => async (dispatch) => {
   };
   try {
     setLoading();
-    const res = await axios.post("/orders", order, config);
+    const res = await axios.post("/api/orders/", order, config);
     dispatch({
       type: ADD_ORDER,
       payload: res.data,
@@ -42,7 +42,7 @@ export const getOrder = (id) => async (dispatch) => {
     },
   };
   try {
-    const res = await axios.get(`/orders/${id}`, config);
+    const res = await axios.get(`/api/orders/${id}`, config);
     dispatch({
       type: GET_ORDER,
       payload: res.data,

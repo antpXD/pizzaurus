@@ -10,6 +10,7 @@ const Success = ({ match }) => {
   useEffect(() => {
     window.scrollTo(0, 0);
     action(getOrder(match.params.id));
+    console.log(process.env.REACT_APP_PUBLISHABLE_KEY);
     // eslint-disable-next-line
   }, []);
 

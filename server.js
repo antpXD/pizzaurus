@@ -1,55 +1,31 @@
-const jsonServer = require("json-server");
 const express = require("express");
-const server = jsonServer.create();
-const router = jsonServer.router("db.json");
-const middlewares = jsonServer.defaults();
+const connectDB = require("./config/db");
 const path = require("path");
+const bodyParser = require("body-parser");
 require("dotenv").config();
 
-const stripe = require("stripe")(process.env.SECRET_KEY);
+const app = express();
 
-// Set default middlewares (logger, static, cors and no-cache)
-server.use(middlewares);
+//Connect Database
+connectDB();
 
-// Add custom routes before JSON Server router
-server.get("/payment", (req, res) => {
-  res.send("Hi!");
-  res.jsonp(req.query);
-});
+app.use(express.json({ extended: false }));
+app.use(bodyParser.json());
 
-// To handle POST, PUT and PATCH you need to use a body-parser
-// You can use the one used by JSON Server
-server.use(jsonServer.bodyParser);
-server.use(async (req, res) => {
-  if (req.method === "POST") {
-    try {
-      const { amount } = req.body;
+//Define routes
+app.use("/api/orders", require("./routes/orders"));
+app.use("/api/payment", require("./routes/payment"));
 
-      const paymentIntent = await stripe.paymentIntents.create({
-        amount: amount,
-        currency: "usd",
-      });
-
-      res.status(200).send(paymentIntent.client_secret);
-    } catch (err) {
-      res.status(500).json({ statusCode: 500, message: err.message });
-    }
-  } else {
-    res.setHeader("Allow", "POST");
-    res.status(405).end("Method Not Allowed");
-  }
-});
-
+// Serve static assets in production
 if (process.env.NODE_ENV === "production") {
   // set static folder
-  server.use(express.static("build"));
-  server.get("*", (req, res) =>
-    res.sendFile(path.resolve(__dirname, "build", "index.html"))
+  app.use(express.static("client/build"));
+
+  app.get("*", (req, res) =>
+    res.sendFile(path.resolve(__dirname, "client", "build", "index.html"))
   );
 }
 
-// Use default router
-server.use(router);
 const PORT = process.env.PORT || 5000;
 
-server.listen(PORT, () => console.log(`Server started on port ${PORT}`));
+app.listen(PORT, () => console.log(`Server started on port ${PORT}`));

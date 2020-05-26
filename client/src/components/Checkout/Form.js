@@ -117,13 +117,10 @@ const Form = () => {
 
     setIsProcessing(true);
     try {
-      const { data: clientSecret } = await axios.post(
-        "http://localhost:5000/payment",
-        {
-          amount: totalPrice,
-          currency: "usd",
-        }
-      );
+      const { data: clientSecret } = await axios.post("/api/payment", {
+        amount: totalPrice,
+        currency: "usd",
+      });
       const paymentMethodReq = await stripe.createPaymentMethod({
         type: "card",
         card: elements.getElement(CardElement),
