@@ -10,13 +10,14 @@
   margin: auto;
   padding: 0 30px;
   font-size: 1rem;
-  z-index: 99;
+  z-index: 0;
   //   background-color: red;
   img {
     width: auto;
     height: 74px;
     cursor: pointer;
   }
+
   .actions {
     margin-top: 25px;
     i {

@@ -75,3 +75,10 @@ button,
 input:focus {
   outline: none;
 }
+
+.in-progress {
+  padding: 5px 20px;
+  background-color: #ffa9a9;
+  display: flex;
+  justify-content: center;
+}

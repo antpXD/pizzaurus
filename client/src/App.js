@@ -21,6 +21,7 @@ function App() {
     <Elements stripe={stripePromise}>
       <Provider store={store}>
         <>
+          <div className="in-progress">app still in progress</div>
           <Navbar />
           <TransitionGroup>
             <CSSTransition

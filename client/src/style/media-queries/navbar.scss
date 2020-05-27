@@ -4,3 +4,29 @@
     justify-content: center;
   }
 }
+
+@media (min-width: 890px) {
+  @media (max-height: 800px) {
+    .navbar {
+      // height: 70px;
+      // margin-top: 15px;
+      justify-content: center;
+      .logo-big {
+        display: none;
+      }
+      .logo-small {
+        display: block;
+        margin-left: 10px;
+      }
+    }
+    .home-container {
+      padding-top: 120px;
+    }
+  }
+}
+
+@media (max-height: 480px) {
+  .navbar {
+    display: none;
+  }
+}
